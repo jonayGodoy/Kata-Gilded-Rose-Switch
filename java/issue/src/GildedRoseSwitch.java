@@ -16,6 +16,9 @@ public class GildedRoseSwitch {
                     updateItemGenericQuality(item);
                 }
                  break;
+             case "Sulfuras, Hand of Ragnaros":
+                 item.setSellIn(item.getSellIn()-1);
+                 break;
              default:
                  item.setSellIn(item.getSellIn()-1);
                  updateItemGenericQuality(item);
