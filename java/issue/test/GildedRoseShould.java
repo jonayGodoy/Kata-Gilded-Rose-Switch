@@ -94,7 +94,7 @@ public class GildedRoseShould {
     }
 
     @Test
-    public void backstage_passes_quality_icreases_by_3_there_are_5_days_or_less() throws Exception {
+    public void backstage_passes_quality_increases_by_3_there_are_5_days_or_less() throws Exception {
         Item backstage = new Item("Backstage passes to a TAFKAL80ETC concert", 5, 4);
         Item [] items = {backstage};
 
