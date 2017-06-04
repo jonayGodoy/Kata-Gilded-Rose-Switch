@@ -76,10 +76,10 @@ public class GildedRoseShould {
         assertThat(agedBrie.getQuality(), is(50));
     }
 
-    @Ignore
+
     @Test
     public void sulfuras_never_decrement_quality() throws Exception {
-        Item sulfuras = new AgeBrie("Sulfuras, Hand of Ragnaros", 20, 1);
+        Item sulfuras = new Sulfuras("Sulfuras, Hand of Ragnaros", 20, 1);
         Item [] items = {sulfuras};
 
         GildedRoseSwitch gildedRose = new GildedRoseSwitch(items);
