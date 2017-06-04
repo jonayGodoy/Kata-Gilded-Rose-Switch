@@ -45,6 +45,9 @@ We have recently signed a supplier of conjured items. This requires an update to
 
 Feel free to create classes as well as modify or change any of the classes during the exercise.
 
+Just for clarification, an item can never have its Quality increase above 50, however "Sulfuras" is a legendary item and as such its Quality is 80 and it never alters.
+
+
 Gilded Rose Switch
 ======================================
 Esta es kata esta basada en la kata de Gilded Rose

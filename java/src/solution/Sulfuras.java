@@ -2,8 +2,8 @@ package solution;
 
 class Sulfuras extends Item {
 
-    Sulfuras(String name, int sellIn, int quality) {
-        super(name, sellIn, quality);
+    Sulfuras(String name, int sellIn) {
+        super(name, sellIn, 80);
     }
 
     @Override
