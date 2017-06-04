@@ -1,11 +1,13 @@
+package issue;
+
 class GildedRoseSwitch {
     private Item[] items;
 
-    GildedRoseSwitch(Item[] items) {
+     GildedRoseSwitch(Item[] items) {
         this.items = items;
     }
 
-    void updateQuality() {
+     void updateQuality() {
         for (Item item : items) {
          switch (item.getName()){
              case "Aged Brie":
