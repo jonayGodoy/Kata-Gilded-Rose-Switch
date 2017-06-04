@@ -1,12 +1,13 @@
 public class Item {
 
-    public String name;
+    private String name;
 
-    public int sellIn;
+    private int sellIn;
 
-    public int quality;
+    private int quality;
 
-    public Item(String name, int sellIn, int quality) {
+
+    Item(String name, int sellIn, int quality) {
         this.name = name;
         this.sellIn = sellIn;
         this.quality = quality;
@@ -15,5 +16,25 @@ public class Item {
     @Override
     public String toString() {
         return this.name + ", " + this.sellIn + ", " + this.quality;
+    }
+
+    String getName() {
+        return name;
+    }
+
+    int getSellIn() {
+        return sellIn;
+    }
+
+    void setSellIn(int sellIn) {
+        this.sellIn = sellIn;
+    }
+
+    int getQuality() {
+        return quality;
+    }
+
+    void setQuality(int quality) {
+        this.quality = quality;
     }
 }

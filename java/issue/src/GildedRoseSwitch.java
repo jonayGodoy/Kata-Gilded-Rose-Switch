@@ -8,12 +8,18 @@ public class GildedRoseSwitch {
 
     public void updateQuality() {
         for (Item item : items) {
-         switch (item.name){
+         switch (item.getName()){
 
 
              default:
-                 item.sellIn = item.sellIn -1;
-                 if(item.quality > 0)item.quality = item.quality -1;
+                 item.setSellIn(item.getSellIn()-1);
+                 if(item.getQuality() > 0){
+                     if(item.getSellIn() <= 0){
+                         item.setQuality(item.getQuality()-2);
+                     }else{
+                         item.setQuality(item.getQuality()-1);
+                     }
+                 }
                  break;
          }
         }

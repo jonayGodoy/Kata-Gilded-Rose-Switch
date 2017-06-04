@@ -13,7 +13,7 @@ public class GildedRoseShould {
         GildedRoseSwitch gildedRose = new GildedRoseSwitch(items);
         gildedRose.updateQuality();
 
-        assertThat(anyItem.quality, is(1));
+        assertThat(anyItem.getQuality(), is(1));
     }
 
     @Test
@@ -24,7 +24,7 @@ public class GildedRoseShould {
         GildedRoseSwitch gildedRose = new GildedRoseSwitch(items);
         gildedRose.updateQuality();
 
-        assertThat(anyItem.sellIn, is(1));
+        assertThat(anyItem.getSellIn(), is(1));
     }
 
     @Test
@@ -32,10 +32,10 @@ public class GildedRoseShould {
         Item anyItem = new Item("anyItem", 0, 0);
         Item [] items = {anyItem};
 
-        GildedRose gildedRose = new GildedRose(items);
+        GildedRoseSwitch gildedRose = new GildedRoseSwitch(items);
         gildedRose.updateQuality();
 
-        assertThat(anyItem.quality, is(0));
+        assertThat(anyItem.getQuality(), is(0));
     }
 
     @Test
@@ -43,10 +43,10 @@ public class GildedRoseShould {
         Item anyItem = new Item("anyItem", 0, 4);
         Item [] items = {anyItem};
 
-        GildedRose gildedRose = new GildedRose(items);
+        GildedRoseSwitch gildedRose = new GildedRoseSwitch(items);
         gildedRose.updateQuality();
 
-        assertThat(anyItem.quality, is(2));
+        assertThat(anyItem.getQuality(), is(2));
     }
 
     @Test
@@ -54,10 +54,10 @@ public class GildedRoseShould {
         Item agedBrie = new Item("Aged Brie", 20, 4);
         Item [] items = {agedBrie};
 
-        GildedRose gildedRose = new GildedRose(items);
+        GildedRoseSwitch gildedRose = new GildedRoseSwitch(items);
         gildedRose.updateQuality();
 
-        assertThat(agedBrie.quality, is(5));
+        assertThat(agedBrie.getQuality(), is(5));
     }
 
     @Test
@@ -65,10 +65,10 @@ public class GildedRoseShould {
         Item agedBrie = new Item("Aged Brie", 20, 50);
         Item [] items = {agedBrie};
 
-        GildedRose gildedRose = new GildedRose(items);
+        GildedRoseSwitch gildedRose = new GildedRoseSwitch(items);
         gildedRose.updateQuality();
 
-        assertThat(agedBrie.quality, is(50));
+        assertThat(agedBrie.getQuality(), is(50));
     }
 
     @Test
@@ -76,10 +76,10 @@ public class GildedRoseShould {
         Item sulfuras = new Item("Sulfuras, Hand of Ragnaros", 20, 1);
         Item [] items = {sulfuras};
 
-        GildedRose gildedRose = new GildedRose(items);
+        GildedRoseSwitch gildedRose = new GildedRoseSwitch(items);
         gildedRose.updateQuality();
 
-        assertThat(sulfuras.quality, is(1));
+        assertThat(sulfuras.getQuality(), is(1));
     }
 
     @Test
@@ -87,10 +87,10 @@ public class GildedRoseShould {
         Item backstage = new Item("Backstage passes to a TAFKAL80ETC concert", 10, 4);
         Item [] items = {backstage};
 
-        GildedRose gildedRose = new GildedRose(items);
+        GildedRoseSwitch gildedRose = new GildedRoseSwitch(items);
         gildedRose.updateQuality();
 
-        assertThat(backstage.quality, is(6));
+        assertThat(backstage.getQuality(), is(6));
     }
 
     @Test
@@ -98,10 +98,10 @@ public class GildedRoseShould {
         Item backstage = new Item("Backstage passes to a TAFKAL80ETC concert", 5, 4);
         Item [] items = {backstage};
 
-        GildedRose gildedRose = new GildedRose(items);
+        GildedRoseSwitch gildedRose = new GildedRoseSwitch(items);
         gildedRose.updateQuality();
 
-        assertThat(backstage.quality, is(7));
+        assertThat(backstage.getQuality(), is(7));
     }
 
     @Test
@@ -109,9 +109,9 @@ public class GildedRoseShould {
         Item backstage = new Item("Backstage passes to a TAFKAL80ETC concert", 0, 50);
         Item [] items = {backstage};
 
-        GildedRose gildedRose = new GildedRose(items);
+        GildedRoseSwitch gildedRose = new GildedRoseSwitch(items);
         gildedRose.updateQuality();
 
-        assertThat(backstage.quality, is(0));
+        assertThat(backstage.getQuality(), is(0));
     }
 }
