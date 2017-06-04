@@ -52,4 +52,31 @@ describe("Gilded Rose",function(){
 
         item.getQuality().should.equal(80);
     });
+
+    it('backstage passes quality increase by 2 there are 10 days or less', function () {
+        let item = new Item("Backstage passes to a TAFKAL80ETC concert",10,4);
+
+        let items = {item};
+        new GildedRoseSwitch(items).updateQuality();
+
+        item.getQuality().should.equal(6);
+    });
+
+    it('backstage passes quality increase by 3 there are 5 days or less', function () {
+        let item = new Item("Backstage passes to a TAFKAL80ETC concert",5,4);
+
+        let items = {item};
+        new GildedRoseSwitch(items).updateQuality();
+
+        item.getQuality().should.equal(7);
+    });
+
+    it('backstage passes quality 0 when sellIn 0', function () {
+        let item = new Item("Backstage passes to a TAFKAL80ETC concert",0,50);
+
+        let items = {item};
+        new GildedRoseSwitch(items).updateQuality();
+
+        item.getQuality().should.equal(0);
+    });
 });
