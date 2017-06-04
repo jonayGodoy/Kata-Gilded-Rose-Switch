@@ -10,7 +10,7 @@ public class GildedRoseShould {
         Item anyItem = new Item("anyItem", 20, 2);
         Item [] items = {anyItem};
 
-        GildedRose gildedRose = new GildedRose(items);
+        GildedRoseSwitch gildedRose = new GildedRoseSwitch(items);
         gildedRose.updateQuality();
 
         assertThat(anyItem.quality, is(1));
@@ -21,7 +21,7 @@ public class GildedRoseShould {
         Item anyItem = new Item("anyItem", 2, 20);
         Item [] items = {anyItem};
 
-        GildedRose gildedRose = new GildedRose(items);
+        GildedRoseSwitch gildedRose = new GildedRoseSwitch(items);
         gildedRose.updateQuality();
 
         assertThat(anyItem.sellIn, is(1));
