@@ -43,4 +43,13 @@ describe("Gilded Rose",function(){
 
         item.getQuality().should.equal(2);
     });
+
+    it('sulfuras never decrement quality', function () {
+        let item = new Item("Sulfuras, Hand of Ragnaros",20,80);
+
+        let items = {item};
+        new GildedRoseSwitch(items).updateQuality();
+
+        item.getQuality().should.equal(80);
+    });
 });
