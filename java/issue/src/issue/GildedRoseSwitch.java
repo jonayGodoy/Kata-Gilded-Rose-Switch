@@ -21,6 +21,8 @@ class GildedRoseSwitch {
                  item.setSellIn(item.getSellIn()-1);
                  break;
              case "Backstage passes to a TAFKAL80ETC concert":
+                 item.setSellIn(item.getSellIn()-1);
+
                  if(item.getSellIn() <= 0){
                      item.setQuality(0);
                  }else {

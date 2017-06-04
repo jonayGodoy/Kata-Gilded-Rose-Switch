@@ -88,10 +88,10 @@ public class GildedRoseShould {
         assertThat(sulfuras.getQuality(), is(1));
     }
 
-    @Ignore
+
     @Test
     public void backstage_passes_quality_icreases_by_2_there_are_10_days_or_less() throws Exception {
-        Item backstage = new Item("Backstage passes to a TAFKAL80ETC concert", 10, 4);
+        Item backstage = new Backstage("Backstage passes to a TAFKAL80ETC concert", 10, 4);
         Item [] items = {backstage};
 
         GildedRoseSwitch gildedRose = new GildedRoseSwitch(items);
@@ -100,10 +100,10 @@ public class GildedRoseShould {
         assertThat(backstage.getQuality(), is(6));
     }
 
-    @Ignore
+
     @Test
     public void backstage_passes_quality_increases_by_3_there_are_5_days_or_less() throws Exception {
-        Item backstage = new Item("Backstage passes to a TAFKAL80ETC concert", 5, 4);
+        Item backstage = new Backstage("Backstage passes to a TAFKAL80ETC concert", 5, 4);
         Item [] items = {backstage};
 
         GildedRoseSwitch gildedRose = new GildedRoseSwitch(items);
@@ -112,10 +112,10 @@ public class GildedRoseShould {
         assertThat(backstage.getQuality(), is(7));
     }
 
-    @Ignore
+
     @Test
     public void backstage_passes_quality_0_when_sellIn_0() throws Exception {
-        Item backstage = new Item("Backstage passes to a TAFKAL80ETC concert", 0, 50);
+        Item backstage = new Backstage("Backstage passes to a TAFKAL80ETC concert", 0, 50);
         Item [] items = {backstage};
 
         GildedRoseSwitch gildedRose = new GildedRoseSwitch(items);
