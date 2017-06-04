@@ -48,4 +48,26 @@ public class GildedRoseShould {
 
         assertThat(anyItem.quality, is(2));
     }
+
+    @Test
+    public void AgedBrie_increment_quality_as_time_passes() throws Exception {
+        Item agedBrie = new Item("Aged Brie", 20, 4);
+        Item [] items = {agedBrie};
+
+        GildedRose gildedRose = new GildedRose(items);
+        gildedRose.updateQuality();
+
+        assertThat(agedBrie.quality, is(5));
+    }
+
+    @Test
+    public void quality_item_never_more_than_50() throws Exception {
+        Item agedBrie = new Item("Aged Brie", 20, 50);
+        Item [] items = {agedBrie};
+
+        GildedRose gildedRose = new GildedRose(items);
+        gildedRose.updateQuality();
+
+        assertThat(agedBrie.quality, is(50));
+    }
 }
