@@ -5,6 +5,7 @@ let expect = require('chai').expect;
 
 let GildedRoseSwitch = require('../../src/solution/GildedRoseSwitch');
 let Item = require('../../src/solution/Item');
+let Sulfuras = require('../../src/solution/Sulfuras');
 
 describe("Gilded Rose",function(){
 
@@ -45,7 +46,8 @@ describe("Gilded Rose",function(){
     });
 
     it('sulfuras never decrement quality', function () {
-        let item = new Item("Sulfuras, Hand of Ragnaros",20,80);
+        let item = new Sulfuras("Sulfuras, Hand of Ragnaros",20);
+
 
         let items = {item};
         new GildedRoseSwitch(items).updateQuality();

@@ -1,21 +1,21 @@
 Item = function(name, sellIn,quality) {
 
     this.updateItem = function(){
-        updateSellIn();
-        updateQuality();
+        this.updateSellIn();
+        this.updateQuality();
     };
 
-    function updateSellIn(){
+    this.updateSellIn = function(){
         sellIn = sellIn -1
-    }
+    };
 
-    function updateQuality(){
+    this.updateQuality = function(){
         if(quality > 0){
             if(sellIn <= 0){
                 quality = quality -2;
             }else{quality = quality -1;}
         }
-    }
+    };
 
     this.print =  function(){
         return name + ", " + sellIn + ", " + quality;
