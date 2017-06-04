@@ -123,4 +123,15 @@ public class GildedRoseShould {
 
         assertThat(backstage.getQuality(), is(0));
     }
+
+    @Test
+    public void Conjured_updateQuality_decrese_quality_by_3() throws Exception {
+        Item conjured = new Conjured("Conjured", 5, 40);
+        Item [] items = {conjured};
+
+        GildedRoseSwitch gildedRose = new GildedRoseSwitch(items);
+        gildedRose.updateQuality();
+
+        assertThat(conjured.getQuality(), is(38));
+    }
 }
