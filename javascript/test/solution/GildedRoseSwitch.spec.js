@@ -6,6 +6,7 @@ const GildedRoseSwitch = require('../../src/solution/GildedRoseSwitch');
 const Item = require('../../src/solution/Item');
 const Sulfuras = require('../../src/solution/Sulfuras');
 const Backstage = require('../../src/solution/Backstage');
+const Conjured = require('../../src/solution/Conjured');
 
 describe("Gilded Rose",function(){
 
@@ -80,5 +81,15 @@ describe("Gilded Rose",function(){
         new GildedRoseSwitch(items).updateQuality();
 
         item.getQuality().should.equal(0);
+    });
+
+
+    it('conjured updateQuality decrease quality by 2', function () {
+        let item = new Conjured("Conjured",0,50);
+
+        let items = {item};
+        new GildedRoseSwitch(items).updateQuality();
+
+        item.getQuality().should.equal(48);
     });
 });

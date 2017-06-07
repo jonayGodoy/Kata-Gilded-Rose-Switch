@@ -3,7 +3,7 @@ const Item = require('./Item');
 class Sulfuras extends Item{
 
     constructor(name, sellIn){
-        super(name,sellIn, 80)
+        super(name,sellIn, 80);
     }
 
     updateSellIn(){

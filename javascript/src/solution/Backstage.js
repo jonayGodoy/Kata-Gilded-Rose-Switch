@@ -6,7 +6,7 @@ let qualityKey;
 class Backstage extends Item{
 
     constructor(name, sellIn, quality){
-        super(name,sellIn, quality)
+        super(name,sellIn, quality);
         sellInKey = Object.getOwnPropertySymbols(this)[1];
         qualityKey = Object.getOwnPropertySymbols(this)[2];
     }

@@ -89,7 +89,7 @@ public class GildedRoseShould {
 
 
     @Test
-    public void backstage_passes_quality_icreases_by_2_there_are_10_days_or_less() throws Exception {
+    public void backstage_passes_quality_increases_by_2_there_are_10_days_or_less() throws Exception {
         Item backstage = new Backstage("Backstage passes to a TAFKAL80ETC concert", 10, 4);
         Item [] items = {backstage};
 
@@ -124,7 +124,7 @@ public class GildedRoseShould {
     }
 
     @Test
-    public void Conjured_updateQuality_decrese_quality_by_3() throws Exception {
+    public void conjured_updateQuality_decrease_quality_by_2() throws Exception {
         Item conjured = new Conjured("Conjured", 5, 40);
         Item [] items = {conjured};
 
