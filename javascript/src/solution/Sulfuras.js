@@ -1,4 +1,4 @@
-let Item = require('./Item');
+const Item = require('./Item');
 
 class Sulfuras extends Item{
 
@@ -14,7 +14,6 @@ class Sulfuras extends Item{
     /* nothing pattern template */
     };
 }
-
 
 
 module.exports = Sulfuras;

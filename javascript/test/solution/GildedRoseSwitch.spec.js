@@ -3,9 +3,10 @@
 let should = require('chai').should();
 let expect = require('chai').expect;
 
-let GildedRoseSwitch = require('../../src/solution/GildedRoseSwitch');
-let Item = require('../../src/solution/Item');
-let Sulfuras = require('../../src/solution/Sulfuras');
+const GildedRoseSwitch = require('../../src/solution/GildedRoseSwitch');
+const Item = require('../../src/solution/Item');
+const Sulfuras = require('../../src/solution/Sulfuras');
+const Backstage = require('../../src/solution/Backstage');
 
 describe("Gilded Rose",function(){
 
@@ -56,7 +57,7 @@ describe("Gilded Rose",function(){
     });
 
     it('backstage passes quality increase by 2 there are 10 days or less', function () {
-        let item = new Item("Backstage passes to a TAFKAL80ETC concert",10,4);
+        let item = new Backstage("Backstage passes to a TAFKAL80ETC concert",10,4);
 
         let items = {item};
         new GildedRoseSwitch(items).updateQuality();
@@ -65,7 +66,7 @@ describe("Gilded Rose",function(){
     });
 
     it('backstage passes quality increase by 3 there are 5 days or less', function () {
-        let item = new Item("Backstage passes to a TAFKAL80ETC concert",5,4);
+        let item = new Backstage("Backstage passes to a TAFKAL80ETC concert",5,4);
 
         let items = {item};
         new GildedRoseSwitch(items).updateQuality();
@@ -74,7 +75,7 @@ describe("Gilded Rose",function(){
     });
 
     it('backstage passes quality 0 when sellIn 0', function () {
-        let item = new Item("Backstage passes to a TAFKAL80ETC concert",0,50);
+        let item = new Backstage("Backstage passes to a TAFKAL80ETC concert",0,50);
 
         let items = {item};
         new GildedRoseSwitch(items).updateQuality();
