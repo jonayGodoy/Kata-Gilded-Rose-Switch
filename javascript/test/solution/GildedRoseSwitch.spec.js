@@ -1,7 +1,6 @@
 'use strict';
 
 let should = require('chai').should();
-let expect = require('chai').expect;
 
 const GildedRoseSwitch = require('../../src/solution/GildedRoseSwitch');
 const Item = require('../../src/solution/Item');

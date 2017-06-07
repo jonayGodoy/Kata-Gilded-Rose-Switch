@@ -1,52 +1,57 @@
+const FactoryItem = (() => {
 
-class Item{
-    constructor(name, sellIn, quality){
-        this.name = name;
-        this.sellIn = sellIn;
-        this.quality = quality;
-    }
+    const nameKey = Symbol('name');
+    const sellInKey = Symbol('sellIn');
+    const qualityKey = Symbol('sellIn');
 
-    updateItem(){
-        this.updateSellIn();
-        this.updateQuality();
-    };
-
-    updateSellIn(){
-        this.sellIn = this.sellIn -1
-    };
-
-    updateQuality(){
-        if(this.quality > 0){
-            if(this.sellIn <= 0){
-                this.quality = this.quality -2;
-            }else{this.quality = this.quality -1;}
+    return class Item{
+        constructor(name, sellIn, quality){
+            this[nameKey] = name;
+            this[sellInKey] = sellIn;
+            this[qualityKey] = quality;
         }
-    };
 
-    print(){
-        return this.name + ", " + this.sellIn + ", " + this.quality;
-    };
+        updateItem(){
+            this.updateSellIn();
+            this.updateQuality();
+        };
 
-    getName(){
-     return this.name;
-    };
+        updateSellIn(){
+            this[sellInKey] =  this[sellInKey] -1
+        };
 
-    getSellIn(){
-        return this.sellIn;
-    };
+        updateQuality(){
+            if( this[qualityKey] > 0){
+                if(this[sellInKey] <= 0){
+                    this[qualityKey] =  this[qualityKey] -2;
+                }else{ this[qualityKey] =  this[qualityKey] -1;}
+            }
+        };
 
-    setSellIn(newSellIn){
-        this.sellIn = newSellIn;
-    };
+        print(){
+            return this[nameKey] + ", " +  this[sellInKey] + ", " +  this[qualityKey];
+        };
 
-    getQuality(){
-        return this.quality;
-    };
+        getName(){
+         return this[nameKey];
+        };
 
-    setQuality(newQuality){
-        this.quality = newQuality;
-    };
-}
+        getSellIn(){
+            return  this[sellInKey];
+        };
 
+        setSellIn(newSellIn){
+            this[sellInKey] = newSellIn;
+        };
 
-module.exports = Item;
+        getQuality(){
+            return  this[qualityKey];
+        };
+
+        setQuality(newQuality){
+            this[qualityKey] = newQuality;
+        };
+    }
+});
+
+module.exports = FactoryItem();
