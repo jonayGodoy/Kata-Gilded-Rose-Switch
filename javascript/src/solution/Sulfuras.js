@@ -1,23 +1,20 @@
 let Item = require('./Item');
 
-function SulfurasFactory(name,sellIn) {
-    function Sulfuras(){
-        let quality = 80;
-        Item.call(this, name, sellIn, quality);
+class Sulfuras extends Item{
 
-        this.updateSellIn = function(){
-            /* nothing pattern template */
-        };
-
-        this.updateQuality = function(){
-            /* nothing pattern template */
-        };
-
+    constructor(name, sellIn){
+        super(name,sellIn, 80)
     }
-    Sulfuras.prototype = Object.create(Item.prototype);
-    Sulfuras.prototype.constructor = Sulfuras;
 
-    return new Sulfuras(name,sellIn);
+    updateSellIn(){
+    /* nothing pattern template */
+    };
+
+    updateQuality(){
+    /* nothing pattern template */
+    };
 }
 
-module.exports = SulfurasFactory;
+
+
+module.exports = Sulfuras;

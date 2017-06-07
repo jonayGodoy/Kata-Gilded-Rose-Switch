@@ -1,46 +1,52 @@
-Item = function(name, sellIn,quality) {
 
-    this.updateItem = function(){
+class Item{
+    constructor(name, sellIn, quality){
+        this.name = name;
+        this.sellIn = sellIn;
+        this.quality = quality;
+    }
+
+    updateItem(){
         this.updateSellIn();
         this.updateQuality();
     };
 
-    this.updateSellIn = function(){
-        sellIn = sellIn -1
+    updateSellIn(){
+        this.sellIn = this.sellIn -1
     };
 
-    this.updateQuality = function(){
-        if(quality > 0){
-            if(sellIn <= 0){
-                quality = quality -2;
-            }else{quality = quality -1;}
+    updateQuality(){
+        if(this.quality > 0){
+            if(this.sellIn <= 0){
+                this.quality = this.quality -2;
+            }else{this.quality = this.quality -1;}
         }
     };
 
-    this.print =  function(){
-        return name + ", " + sellIn + ", " + quality;
+    print(){
+        return this.name + ", " + this.sellIn + ", " + this.quality;
     };
 
-    this.getName = function(){
-        return name;
+    getName(){
+     return this.name;
     };
 
-    this.getSellIn = function(){
-        return sellIn;
+    getSellIn(){
+        return this.sellIn;
     };
 
-    this.setSellIn = function(newSellIn){
-        sellIn = newSellIn;
+    setSellIn(newSellIn){
+        this.sellIn = newSellIn;
     };
 
-    this.getQuality = function(){
-        return quality;
+    getQuality(){
+        return this.quality;
     };
 
-    this.setQuality = function(newQuality){
-        quality = newQuality;
+    setQuality(newQuality){
+        this.quality = newQuality;
     };
+}
 
-};
 
 module.exports = Item;
