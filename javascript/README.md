@@ -1,6 +1,6 @@
 ## Setup
 npm install
 
-test
+## test
 npm run test
 
