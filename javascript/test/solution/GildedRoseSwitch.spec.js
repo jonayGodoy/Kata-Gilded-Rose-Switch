@@ -85,7 +85,7 @@ describe("Gilded Rose",function(){
 
 
     it('conjured updateQuality decrease quality by 2', function () {
-        let item = new Conjured("Conjured",0,50);
+        let item = new Conjured("Conjured",10,50);
 
         let items = {item};
         new GildedRoseSwitch(items).updateQuality();

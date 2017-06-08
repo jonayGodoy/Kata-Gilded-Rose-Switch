@@ -3,29 +3,31 @@ const FactoryItem = (() => {
     const nameKey = Symbol('name');
     const sellInKey = Symbol('sellIn');
     const qualityKey = Symbol('sellIn');
+    const updateSellInKey = Symbol('updateSellIn()');
+    const updateQualityKey = Symbol('updateQuality()');
 
     return class Item{
         constructor(name, sellIn, quality){
             this[nameKey] = name;
             this[sellInKey] = sellIn;
             this[qualityKey] = quality;
+
+            this[updateSellInKey] =  function updateSellIn(){
+                this[sellInKey] =  this[sellInKey] -1;
+            };
+
+            this[updateQualityKey] =  function updateQuality(){
+                if( this[qualityKey] > 0){
+                    if(this[sellInKey] <= 0){
+                        this[qualityKey] =  this[qualityKey] -2;
+                    }else{ this[qualityKey] =  this[qualityKey] -1;}
+                }
+            };
         }
 
         updateItem(){
-            this.updateSellIn();
-            this.updateQuality();
-        };
-
-        updateSellIn(){
-            this[sellInKey] =  this[sellInKey] -1
-        };
-
-        updateQuality(){
-            if( this[qualityKey] > 0){
-                if(this[sellInKey] <= 0){
-                    this[qualityKey] =  this[qualityKey] -2;
-                }else{ this[qualityKey] =  this[qualityKey] -1;}
-            }
+            this[updateSellInKey]();
+            this[updateQualityKey]();
         };
 
         print(){

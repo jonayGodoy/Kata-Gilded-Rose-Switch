@@ -1,24 +1,21 @@
 const Item = require('./Item');
-const FactoryBackStage = (() => {
-    let sellInKey;
-    let qualityKey;
 
-    return class Backstage extends Item {
+class Backstage extends Item {
+    constructor(name, sellIn, quality) {
+        super(name, sellIn, quality);
+        let sellInKey = Object.getOwnPropertySymbols(this)[1];
+        let qualityKey = Object.getOwnPropertySymbols(this)[2];
 
-        constructor(name, sellIn, quality) {
-            super(name, sellIn, quality);
-            sellInKey = Object.getOwnPropertySymbols(this)[1];
-            qualityKey = Object.getOwnPropertySymbols(this)[2];
-        }
+        let updateSellInKey = Object.getOwnPropertySymbols(this)[3];
+        let updateQualityKey = Object.getOwnPropertySymbols(this)[4];
 
-        updateSellIn() {
-            super.updateSellIn();
+        this[updateSellInKey] = function updateSellIn() {
             if (this[sellInKey] <= 0) {
                 this[qualityKey] = 0;
             }
         };
 
-        updateQuality() {
+        this[updateQualityKey] = function updateQuality() {
             if (this[sellInKey] <= 0) {
                 this[sellInKey] = 0;
             } else {
@@ -34,5 +31,6 @@ const FactoryBackStage = (() => {
             }
         };
     }
-});
-module.exports = FactoryBackStage();
+}
+
+module.exports = Backstage;
