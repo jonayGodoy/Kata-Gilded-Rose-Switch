@@ -8,6 +8,7 @@ class Conjured extends Item {
 
     @Override
     protected void updateQuality() {
-        quality = quality -2;
+       super.updateQuality();
+       super.updateQuality();
     }
 }
